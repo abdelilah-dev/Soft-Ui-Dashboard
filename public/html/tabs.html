@@ -1,0 +1,75 @@
+<div class="d-flex m-auto w-100">
+    <div class="left-side-bar">
+        <div class="offcanvas offcanvas-start show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-gauge"></i>
+                    <span>Shoft Dashboard</span>
+                </div>
+                <div>
+                    <ul class="navbar flex-column">
+                        <li class="nav-item active" id="dashboard">
+                            <a href="/dashboard">
+                                <i class="fa-solid fa-store"></i>
+                                <span>Dashboard</span></a>
+                        </li>
+                        <li class="nav-item" id="tables">
+                            <a href="/tables">
+                                <i class="fa-solid fa-diagram-predecessor"></i>
+                                <span>Tables</span></a>
+                        </li>
+                        <li class="nav-item" id="billing">
+                            <a href="/billing">
+                                <i class="fa-regular fa-credit-card"></i>
+                                <span>Billing</span></a>
+                        </li>
+                        <li class="nav-item" id="rtl">
+                            <a href="/rtl">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                <span>RTL</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <h6 class="">Account pages</h6>
+                        </li>
+                        <li class="nav-item" id="profile">
+                            <a href="/profile">
+                                <i class="fa-solid fa-user"></i>
+                                <span>Profile</span></a>
+                        </li>
+                        <li class="nav-item" id="sign-in">
+                            <a href="/sign-in">
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span>Sign In</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-content">
+        <div class="header-section d-flex align-items-center justify-content-center">
+            <div class="tab-info">
+                <span>Pages / Dashboard</span>
+                <h6>Dashboard</h6>
+            </div>
+            <div class="input-group mb-3 gap-2 ms-auto">
+                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                <button class="show-offcanvas-btn btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                        class="fa-solid fa-bars"></i></button>
+                <a href=""><i class="fa-solid fa-user"></i>sign in</a>
+                <a href=""><i class="fa-solid fa-gear"></i></a>
+                <a href=""><i class="fa-solid fa-bell"></i></a>
+            </div>
+        </div>
+        <div class="content" id="content">
+        </div>
+    </div>
+</div>

@@ -4,26 +4,17 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '/src/css/style.css'
 
 let offcanvas;
-let showOffcanvasBtn = document.querySelector(".show-offcanvas-btn");
-let inSmallScreen = false;
+let showOffcanvasBtn;
 
 window.addEventListener('resize', () => {
     offcanvas = document.querySelector('.offcanvas');
-    if (!showOffcanvasBtn) {
-        showOffcanvasBtn = document.querySelector(".show-offcanvas-btn");
-    }
+    showOffcanvasBtn = document.querySelector(".show-offcanvas-btn");
     if (window.innerWidth < 992) {
-        if (offcanvas.classList.contains('tttt')) {
-            offcanvas.classList.remove('show');
-            offcanvas.classList.remove('tttt');
-        } if (!inSmallScreen && !offcanvas.classList.contains('show')) {
-            showOffcanvasBtn.click();
-            inSmallScreen = true
-        }
+        offcanvas.classList.remove('show');
+        offcanvas.classList.remove('hiding');
     } else {
         offcanvas.classList.add('show');
-        offcanvas.classList.add('tttt');
-        inSmallScreen = false
+        offcanvas.classList.remove('hiding');
     }
 })
 document.addEventListener("DOMContentLoaded", () => {

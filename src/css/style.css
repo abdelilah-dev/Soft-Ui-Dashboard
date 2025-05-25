@@ -37,12 +37,8 @@ a {
 /* Start left side bar  */
 .left-side-bar {
     transition: 0.5s;
-    padding: 0;
     flex: 0 0 250px;
-    height: 100vh;
     transition: 0.5s;
-    position: relative;
-
 }
 
 @media (max-width: 992px) {
@@ -54,39 +50,16 @@ a {
 
 .offcanvas.offcanvas-start {
     width: 250px;
-    background-color: transparent;
-    border-right: none;
 }
 
 @media (max-width: 992px) {
     .offcanvas.offcanvas-start {
         margin: 10px 0 10px 10px;
         border-radius: 10px;
-        padding: 0;
         width: 250px;
-        background-color: #fff;
+        background-color: #fff !important;
         box-shadow: 0 0 20px #00000030;
     }
-
-    .offcanvas .offcanvas-header {
-        display: flex;
-        align-items: start;
-    }
-}
-
-.offcanvas.offcanvas-start .offcanvas-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.offcanvas.offcanvas-start .offcanvas-body .brand-logo {
-    padding: 20px;
-    border-bottom: 1px solid #5555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
 }
 
 .offcanvas .offcanvas-body .brand-logo i {
@@ -94,13 +67,8 @@ a {
     color: var(--bs-primary);
 }
 
-.offcanvas .offcanvas-body .brand-logo span {
-    font-weight: 600;
-}
-
 .offcanvas .offcanvas-body .navbar li {
     width: 95%;
-    margin-left: auto;
 }
 
 .offcanvas .offcanvas-body .navbar li a {
@@ -162,9 +130,6 @@ a {
 /* End left side bar  */
 /* start global header  */
 .dashboard-content {
-    height: 100vh;
-    overflow: scroll;
-    width: 100%;
     padding: 0 25px;
 }
 
@@ -182,39 +147,16 @@ a {
 
 .dashboard-content .header-section {
     padding: 15px 0;
-    ;
+
 }
 
 .header-section .tab-info p {
     color: #777;
     font-size: 14px;
-    margin: 0;
-}
-
-.header-section .tab-info p span {
-    color: black;
-    font-weight: 500;
-}
-
-.header-section .tab-info h6 {
-    font-weight: 700;
-    font-size: 16px;
-    margin: 0;
 }
 
 .header-section .input-group {
     width: fit-content;
-}
-
-@media(max-width: 768px) {
-    .header-content {
-        text-align: center;
-    }
-
-    .header-content .input-group {
-        margin: 0 !important;
-        justify-content: center;
-    }
 }
 
 .dashboard-content .header-section .input-group input {
@@ -258,13 +200,7 @@ a {
 }
 
 .setting-bar .left-bar {
-    background: white;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
     width: 350px;
-    padding: 20px;
     box-shadow: 0 0 20px #00000021;
     z-index: 100;
     transform: translateX(350px);
@@ -273,6 +209,21 @@ a {
 
 .setting-bar .left-bar.show {
     transform: translateX(0px);
+}
+
+@media (max-width: 667px) {
+    .header-content>.input-group {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-content>.input-group>.input-group {
+        width: 100%;
+    }
+
+    .header-content>.input-group>.input-group input {
+        flex: 0 0 calc(100% - 50px);
+    }
 }
 
 /* End global header  */

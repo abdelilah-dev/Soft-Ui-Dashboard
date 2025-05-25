@@ -2,6 +2,9 @@
     <div class="left-side-bar">
         <div class="offcanvas offcanvas-start show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
             id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header d-block d-lg-none">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
             <div class="offcanvas-body">
                 <div class="brand-logo">
                     <i class="fa-solid fa-gauge"></i>
@@ -47,35 +50,30 @@
             </div>
         </div>
     </div>
-    <div class="dashboard-content">
+    <div class="dashboard-content pe-md-5 ps-md-5 ps-2 pe-2 ">
         <div class="header-section">
 
-            <div class="header-content d-flex flex-wrap align-items-center justify-content-center">
+            <div class="header-content d-flex gap-3 flex-wrap align-items-center justify-content-center">
                 <div class="tab-info">
                     <p>Pages / <span class="black">Dashboard</span></p>
                     <h6>Dashboard</h6>
                 </div>
-                <div class="input-group gap-2 ms-auto">
+                <div class="input-group gap-2 ms-auto flex-wrap">
                     <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <span class="input-group-text" id="basic-addon1"><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
                         <input type="text" class="form-control" placeholder="Type here.." aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                    <a href="/sign-in"><i class="fa-solid fa-user"></i>sign in</a>
-                    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasScrolling" role="button"
-                        aria-controls="offcanvasScrolling"><i class="fa-solid fa-bars"></i></a>
-
+                    <button href="/sign-in"><i class="fa-solid fa-user"></i>sign in</button>
+                    <button class="btn d-lg-none d-flex" data-bs-toggle="offcanvas" href="#offcanvasScrolling"
+                        role="button" aria-controls="offcanvasScrolling"><i class="fa-solid fa-bars"></i></button>
                     <div class="setting-bar d-flex align-items-center justify-content-center">
-                        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button"
-                            aria-controls="offcanvasRight">
-                            <i class="fa-solid fa-gear"></i></a>
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                            aria-labelledby="offcanvasRightLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close">aaa</button>
+                        <button class="btn settingBar-open-btn"><i class="fa-solid fa-gear"></i></button>
+                        <div class="left-bar">
+                            <div>
+                                <button type="button" class="btn-close settingBar-close-btn"><i
+                                        class="fa-solid fa-gear"></i></button>
                             </div>
                             <div class="offcanvas-body">
                                 ...
@@ -84,10 +82,10 @@
                     </div>
                     <div class="notification d-flex align-items-center justify-content-center">
                         <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 <i class="fa-solid fa-bell"></i>
-                            </a>
+                            </button>
                             <ul class="dropdown-menu">
                                 <li><span class="dropdown-item" href="#">Action</span></li>
                                 <li><span class="dropdown-item" href="#">Another action</sp>

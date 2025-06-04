@@ -18,19 +18,21 @@ window.addEventListener('resize', () => {
 })
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new MutationObserver((mutations, obs) => {
-        const tabActive = document.getElementById(`${location.pathname.slice(1)}`);
+        const tabActive = document.getElementById(`${location.pathname.slice(1) ? location.pathname.slice(1) : "dashboard"}`);
         const allTabs = document.querySelectorAll(".offcanvas-body .navbar .nav-item");
-        offcanvas = document.querySelector('.offcanvas');
-        if (tabActive && allTabs.length && offcanvas) {
+        const offcanvas = document.querySelector('.offcanvas');
+        if (allTabs) {
             allTabs.forEach(ele => ele.classList.remove("active"));
             tabActive.classList.add("active");
+        }
+        if (offcanvas) {
             if (window.innerWidth < 992) {
                 offcanvas.classList.remove("show")
-                console.log("is small screen")
             } else offcanvas.classList.add("show");
-            obs.disconnect();
         }
 
+        // disconnect observer
+        if (tabActive && allTabs && offcanvas) obs.disconnect();
     });
     observer.observe(document.body, {
         childList: true,

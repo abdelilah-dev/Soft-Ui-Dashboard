@@ -8,7 +8,7 @@ let showOffcanvasBtn;
 window.addEventListener('resize', () => {
     offcanvas = document.querySelector('.offcanvas');
     showOffcanvasBtn = document.querySelector(".show-offcanvas-btn");
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 1200) {
         offcanvas.classList.remove('show');
         offcanvas.classList.remove('hiding');
     } else {
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tabActive.classList.add("active");
         }
         if (offcanvas) {
-            if (window.innerWidth < 992) {
+            if (window.innerWidth < 1200) {
                 offcanvas.classList.remove("show")
             } else offcanvas.classList.add("show");
         }

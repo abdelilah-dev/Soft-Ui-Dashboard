@@ -30,6 +30,7 @@ body {
 /* Start Component  */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -111,12 +112,24 @@ a {
     background-color: #27272a !important;
 }
 
+.primary-text-color {
+    color: #71717a !important;
+}
+
 .w-3 {
     width: 3%;
 }
 
+.w-10 {
+    width: 10%;
+}
+
 .w-17 {
     width: 17%;
+}
+
+.w-25 {
+    width: 25%;
 }
 
 .w-40 {
@@ -153,6 +166,11 @@ a {
 
 .text-sm {
     font-size: .875rem !important;
+    font-weight: 500;
+}
+
+.text-xs {
+    font-size: .75rem !important;
 }
 
 .progress {
@@ -166,6 +184,46 @@ a {
 .progress-bar {
     height: 6px;
     border-radius: 10px;
+    background-image: linear-gradient(310deg, #0ea5e9, #06b6d4);
+}
+
+.avatar-sm {
+    width: 36px;
+    height: 36px;
+    font-size: .875rem;
+}
+
+.avatar-xs {
+    width: 24px;
+    height: 24px;
+}
+
+.avatar-group .avatar {
+    position: relative;
+    z-index: 2;
+    border: 2px solid #fff;
+    display: flex;
+    transition: 0.5s;
+    margin-left: -0.7rem;
+}
+
+.avatar-group .avatar:hover {
+    z-index: 3;
+}
+
+[data-title]:hover:before {
+    content: attr(data-title);
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    font-size: 12px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    text-wrap-mode: nowrap;
 }
 
 /* End Component  */

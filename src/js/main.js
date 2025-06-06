@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
             } else offcanvas.classList.add("show");
         }
 
+        const userAvatar = document.querySelectorAll(".avatar-group .avatar");
+        if (userAvatar) {
+            userAvatar.forEach(ele => {
+                ele.addEventListener("mouseenter", event => {
+                    console.log("is don")
+                    console.log(ele.dataset.title)
+                })
+            })
+        }
+
         // disconnect observer
         if (tabActive && allTabs && offcanvas) obs.disconnect();
     });

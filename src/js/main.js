@@ -2,6 +2,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '/src/css/style.css';
+import Chart from 'chart.js/auto';
+import { readUsedSize } from 'chart.js/helpers';
+
 let offcanvas;
 let showOffcanvasBtn;
 
@@ -40,9 +43,104 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             })
         }
+        const chartCanvas = document.querySelector(".chart-canvas");
+        if (chartCanvas) {
+            const ctx = chartCanvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [400, 200, 100, 250, 500, 120, 380, 470],
+                        backgroundColor: 'white',
+                        borderRadius: 10,
+                        barThickness: 8,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: 'white', display: false },
+                            grid: { display: true }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: 'white' },
+                            grid: {
+                                display: false,
+                                color: 'rgba(255,255,255,0.1)' // خطوط ناعمة جدًا
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        const chartLine = document.querySelector("#chart-line");
+        if (chartLine) {
+            const ctx = chartLine.getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                    datasets: [{
+                        label: 'Mobile Apps',
+                        data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+                        backgroundColor: 'white',
+                        borderColor: '#cb0c9f',
+                        borderRadius: 2,
+                        borderWidth: 5,
+                        barThickness: 8,
+                        lineTension: 0.4,
+                        borderWidth: 4,
+                    }, {
+                        label: 'WebSites',
+                        data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
+                        backgroundColor: 'white',
+                        borderColor: '#453e76',
+                        borderRadius: 0,
+                        borderWidth: 5,
+                        barThickness: 8,
+                        lineTension: 0.4,
+                        borderWidth: 4,
+                    }]
+                },
+                options: {
+                    hover: true,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#71717a', display: true },
+                            grid: { display: true }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#71717a' },
+                            grid: {
+                                display: false,
+                                color: 'rgba(255,255,255,0.1)' // خطوط ناعمة جدًا
+                            }
+                        }
+                    }
+                }
+            });
+        }
 
         // disconnect observer
-        if (tabActive && allTabs && offcanvas) obs.disconnect();
+        if (tabActive && allTabs && offcanvas && chartCanvas) obs.disconnect();
     });
     observer.observe(document.body, {
         childList: true,

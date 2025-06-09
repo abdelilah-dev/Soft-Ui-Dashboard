@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
             })
         }
-        const chartCanvas = document.querySelector(".chart-canvas");
-        if (chartCanvas) {
-            const ctx = chartCanvas.getContext('2d');
+        const chartBars = document.querySelector("#chart-bars");
+        if (chartBars) {
+            const ctx = chartBars.getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // disconnect observer
-        if (tabActive && allTabs && offcanvas && chartCanvas) obs.disconnect();
+        if (tabActive && allTabs && offcanvas && chartLine && chartBars) obs.disconnect();
     });
     observer.observe(document.body, {
         childList: true,

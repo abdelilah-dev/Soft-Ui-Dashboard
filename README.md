@@ -31,10 +31,14 @@ A responsive and modern admin dashboard interface re-developed from a UI templat
 
 ```bash
 ├── public/
-├── src/
 │   ├── assets/
+│   ├── assets/
+├── src/
 │   ├── js/
-│   ├── css/
-│   └── index.html
+│   └── css/
+├── .gitignore
+├── index.html
 ├── vite.config.js
+├── routing.js
+├── vercel.json
 └── README.md

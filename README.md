@@ -2,7 +2,7 @@
 
 A responsive and modern admin dashboard interface re-developed from a UI template. Built from scratch using **HTML**, **Bootstrap**, **JavaScript**, and **Vite**.
 
-![Dashboard Screenshot](./assets/preview.jpg)
+![Dashboard Screenshot](/public/assets/preview.jpg)
 
 ---
 
